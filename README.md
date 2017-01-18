@@ -3,6 +3,7 @@
 ## Collecting the corpus
 - Burton DeWilde has done a bit of homework on scraping his NYT columns here: http://bdewilde.github.io/blog/blogger/2013/10/15/friedman-corpus-1-background-and-creation/
 - TLF also apparently writes for RCP: http://www.realclearpolitics.com/authors/thomas_friedman/
+  - Oh wait that's just hit NYT columns again. Hard to tell the difference between new writing and him just repeating himself
 
 ```
 docker run --rm -ti -v /home/khturner/friedman:/root/torch-rnn/friedman crisbal/torch-rnn:base bash

@@ -26,6 +26,10 @@ cd ThomasFriedbot
 We'll use [Cristian Baldi's Docker images that wrap torch-rnn](https://github.com/crisbal/docker-torch-rnn) to do this training.
 
 ```
+# Collect corpuses (corpi?) as you generate them
+cd ~/torch-rnn
+cat ThomasFriedbot/data/nyt_corpus.txt > friedman/corpus.txt
+
 # Preprocess the training data
 python scripts/preprocess.py \
 --input_txt friedman/corpus.txt \
@@ -33,7 +37,7 @@ python scripts/preprocess.py \
 --output_json friedman/corpus.json
 
 # Train
-th train.lua \
+th train.lua -num_layers 3 -rnn_size 256 -checkpoint_name friedman/checkpoint \
 -input_h5 friedman/corpus.h5 \
 -input_json friedman/corpus.json \
 -gpu -1

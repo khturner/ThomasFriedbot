@@ -26,4 +26,4 @@ for (url in urls) {
 }
 
 # Save it
-writeLines(tlf_paragraphs, "/root/torch-rnn/friedman/corpus.txt")
+writeLines(tlf_paragraphs, "data/nyt_corpus.txt")

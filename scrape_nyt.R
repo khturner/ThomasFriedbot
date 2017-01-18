@@ -25,5 +25,8 @@ for (url in urls) {
   tlf_paragraphs <- c(tlf_paragraphs, story)
 }
 
+# Fix Unicode
+tlf_paragraphs <- tlf_paragraphs %>% iconv(from = "UTF-8", to = "ASCII//TRANSLIT", "")
+
 # Save it
 writeLines(tlf_paragraphs, "data/nyt_corpus.txt")
